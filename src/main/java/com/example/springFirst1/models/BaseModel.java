@@ -1,7 +1,9 @@
 package com.example.springFirst1.models;
 
-import java.util.Date;
+import java.time.LocalDate;
 
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 import lombok.Getter;
@@ -12,7 +14,13 @@ import lombok.Setter;
 @MappedSuperclass
 public abstract class BaseModel {
     @Id
-    private long id;
-    private Date createdAt;
-    private Date updatedAt;
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private Long id;
+    private LocalDate createdAt;
+    private LocalDate updatedAt;
+
+    // @PreUpdate
+    // protected void onUpdate() {
+    //     updatedAt = LocalDate.now();
+    // }
 }

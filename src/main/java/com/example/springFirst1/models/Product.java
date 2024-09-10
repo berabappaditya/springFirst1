@@ -1,6 +1,8 @@
 package com.example.springFirst1.models;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Lob;
 import jakarta.persistence.ManyToOne;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,6 +15,8 @@ import lombok.Setter;
 @Entity
 public class Product extends BaseModel{
     private String title;
+    @Lob
+    @Column(columnDefinition = "TEXT")
     private String description;
     private double price;
     private String image;

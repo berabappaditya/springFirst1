@@ -1,7 +1,6 @@
 package com.example.springFirst1.services;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpMethod;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
@@ -20,9 +19,15 @@ public class FakeProductService implements ProductService {
      private static final String FAKESTORE_API_URL = "https://api.escuelajs.co/api/v1/products/";
 
     
+     
     private RestTemplate restTemplate;
     FakeProductService(RestTemplate restTemplate){
         this.restTemplate = restTemplate;
+    }
+
+    public Product createProduct(Product product) {
+        // TODO Auto-generated method stub
+        return null;
     }
 
     @Override
